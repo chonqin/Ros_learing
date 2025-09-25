@@ -1,0 +1,6 @@
+<launch>
+
+        <node pkg="learning_service" type="turtle_spawn" name="turtle_spawn" launch-prefix="gnome-terminal-e"/>
+        <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+
+</launch>
