@@ -1209,3 +1209,31 @@ Slam算法节点在ros中有提供，叫做Hector_Mapping节点。不用重复�
 控制机器人移动，建模成功。
 
 ![image-20250926201452881](/home/chonqin/.config/Typora/typora-user-images/image-20250926201452881.png)
+
+### launch文件使用
+
+操作这么多有点麻烦，现在编写一个launch文件来一次性开启这些程序。
+
+![image-20250926204242519](/home/chonqin/.config/Typora/typora-user-images/image-20250926204242519.png)
+
+第一条语法是包含另一个launch文件的写法，￥（)用于查找括号下软件包的目录，后面接着具体文件路径。
+
+其余三条，之前已经说明过。
+
+编译运行。成功。
+
+在rviz中导出配置好的rviz，放入pkg文件夹里的rviz目录下，并命名slam.rviz。
+
+```
+rviz -d ~/Ros_WorkSpace/src/slam_pkg/rviz/slam.rviz
+```
+
+可以在终端输入这段代码打开rviz后自动加载配置文件，也可以打开rviz后再手动选择加载。
+
+![image-20250926205145607](/home/chonqin/.config/Typora/typora-user-images/image-20250926205145607.png)
+
+可以在launch中添加参数args ，通过rviz来自动加载rviz的配置。
+
+![image-20250926205323599](/home/chonqin/.config/Typora/typora-user-images/image-20250926205323599.png)
+
+这样子就算自动配置好launch文件了。
