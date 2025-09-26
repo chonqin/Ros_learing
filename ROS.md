@@ -1174,3 +1174,38 @@ msg.info.origin.position.y = 1.0;
 
 **定位**：是指机器人确定自己的位置。
 
+### Slam的原理
+
+如何创建地图呢？？
+
+先选定一个原点作为参照系，建立坐标轴，通过记录当前观测点与对应参照物的坐标，改变不同观测点，将多次记录的坐标进行比对，将参照物重合构建出一张完整的地图。
+
+**在Ros中如何实现建图的功能呢**
+
+首先，Ros是地图是栅格地图，机器人放置在环境中，没有开启传感器感知周围时，所有格子的值均为-1，涂上灰色。
+
+假设此时机器人开启了雷达扫描功能，激光发射出去穿过的格子都标记为0，涂上白色，代表没有障碍物。直到激光撞到障碍物，反射回来，这个格子标记为100，涂上黑色。这样子就能得到当前观测点的周围障碍物情况，改变观测点后，又进行一次扫描，标记出周围的情况。将两次的标记情况进行特征重合，构建出局部的地图。不断重复这个过程，就可以得到一副完整的地图了。
+
+![image-20250926185458750](/home/chonqin/.config/Typora/typora-user-images/image-20250926185458750.png)
+
+### Ros中通过c++实现Slam
+
+![image-20250926185810196](/home/chonqin/.config/Typora/typora-user-images/image-20250926185810196.png)
+
+激光雷达发送数据到slam节点进行处理（建图算法），在发布map话题让rviz可视化界面订阅，就可以显示地图出来了。
+
+Slam算法节点在ros中有提供，叫做Hector_Mapping节点。不用重复造轮子。
+
+![image-20250926200118226](/home/chonqin/.config/Typora/typora-user-images/image-20250926200118226.png)
+
+通过运行前三条指令可以开启slam的扫描功能，在rviz界面中add选项添加机器人model和map地图
+
+![image-20250926201134977](/home/chonqin/.config/Typora/typora-user-images/image-20250926201134977.png)
+
+第四行指令可以开启一个图像化界面来控制机器人运动
+
+![image-20250926201231220](/home/chonqin/.config/Typora/typora-user-images/image-20250926201231220.png)
+
+控制机器人移动，建模成功。
+
+![image-20250926201452881](/home/chonqin/.config/Typora/typora-user-images/image-20250926201452881.png)
