@@ -12,11 +12,11 @@
 
 ### 1.节点(Node) 与 节点管理器(Node Master)
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/e4cf4abf66181a4b6c4d6ccd5ff8c5e9.png#pic_center)
+![img](assets/e4cf4abf66181a4b6c4d6ccd5ff8c5e9.png)
 
 ### 2.通信模式之一——Topic模式
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/6b5151a88a7d50ae4b4ac6e995fbe274.png#pic_center)
+![img](/home/chonqin/Ros_WorkSpace/src/6b5151a88a7d50ae4b4ac6e995fbe274.png)
 
 - Message：定义数据的类型，具有一定的数据结构定义
 - 单向的，可多次
@@ -26,7 +26,7 @@
 
 ### 3通信模式之二——Service模式
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/5526214ed935d789e03d828b463f0ad4.png#pic_center)
+![在这里插入图片描述](assets/5526214ed935d789e03d828b463f0ad4.png)
 
 - C/S模型
 - 带有反馈的机制
@@ -36,11 +36,11 @@
 
 ### 4.两者对比
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/5797a3624420670cdd2c0962a3a6efcb.png#pic_center)
+![img](assets/5797a3624420670cdd2c0962a3a6efcb.png)
 
 ### 参数(Parameter)
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/a43896255ea289882e9ec61987f5cf2f.png#pic_center)
+![在这里插入图片描述](assets/a43896255ea289882e9ec61987f5cf2f.png)
 
 - 参数是一个“字典”
 - 存储在ROS Master服务器，节点可以对参数存储、检索、更新（如图）
@@ -48,7 +48,7 @@
 
 ## 三、文件系统
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/f92abef3679ce9fee72cd879d885ff98.png#pic_center)
+![在这里插入图片描述](assets/f92abef3679ce9fee72cd879d885ff98.png)
 
 - 文件系统代表了代码的结构
 
@@ -76,7 +76,7 @@ rosrun turtlesim turtlesim_node
 rosrun turtlesim turtle_teleop_key
 ```
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/697323cffea407d3f72f3cdaee58a02a.png#pic_center)
+![在这里插入图片描述](assets/697323cffea407d3f72f3cdaee58a02a.png)
 
 ### 2.查看系统中的计算图：rqt_graph
 
@@ -87,27 +87,27 @@ rqt_graph
 ```
 
 可展示系统中运行的计算图：
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/99b2537f738a69cc0a22ab5e3a82acbc.png#pic_center)可以清晰地了解系统节点间通信的部分信息。
- teleop_turtle节点（键盘控制节点）通过cmd_vel（[topic](https://so.csdn.net/so/search?q=topic&spm=1001.2101.3001.7020)）向turtlesim节点（海归仿真器节点）发出消息，使得小海龟移动。
+ ![在这里插入图片描述](assets/99b2537f738a69cc0a22ab5e3a82acbc.png)可以清晰地了解系统节点间通信的部分信息。
+ teleop_turtle节点（键盘控制节点）通过cmd_vel（[topic](https://so.csdn.net/so/search?q=topic&spm=1001.2101.3001.7020)）向turtlesim节点（海归仿真器节点)发出消息，使得小海龟移动。
 
 ### 3.rosnode
 
 #### 显示节点列表：rosnode list
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/925ad456811072eabab0b16e704def72.png#pic_center)可以看到有3个节点。
+![在这里插入图片描述](assets/925ad456811072eabab0b16e704def72.png)可以看到有3个节点。
 
 #### 查看节点信息：rosnode info
 
 查看节点的具体信息：`rosnode info /节点名`
  我们查看海龟仿真器节点/turtlesim的信息：
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/6f3eb2ad18e3173f7adc066991ce6d41.png#pic_center)
+ ![在这里插入图片描述](assets/6f3eb2ad18e3173f7adc066991ce6d41.png)
  可以看到海龟仿真器节点/turtlesim自己有一些发布和订阅，也有一些服务。
 
 ### 4.rostopic
 
 #### 显示topic列表：rostopic list
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/ab34938183af1424055c4a3c20159ea7.png#pic_center)
+![在这里插入图片描述](assets/ab34938183af1424055c4a3c20159ea7.png)
 
 #### 手动发布数据给topic
 
@@ -129,7 +129,7 @@ angular:
 
 小海龟沿着正前方向移动了1单位，我们再使用参数`-r 5`移动5次，小海龟就撞上了南墙。
  Ctrl+C就可以终止。
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/000001a66bd5d198841ecc3c559f628b.png#pic_center)
+ ![在这里插入图片描述](assets/000001a66bd5d198841ecc3c559f628b.png)
 
 ### 5.rosmsg
 
@@ -138,7 +138,7 @@ angular:
 上例我们使用了**消息数据结构**定义了一个消息传给topic，我们可以查看有哪些消息数据结构。
  查看消息数据结构使用：rosmsg show …
  在输入过程中，我们可以勤使用Tab键查看或填充内容。
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/a446daca224d4bc77e761ef2692c3a45.png#pic_center)我们可以看到geometry_msgs/Twist数据结构的内容。
+ ![在这里插入图片描述](assets/a446daca224d4bc77e761ef2692c3a45.png)我们可以看到geometry_msgs/Twist数据结构的内容。
 
 ### 6.使用服务[通信方式](https://so.csdn.net/so/search?q=通信方式&spm=1001.2101.3001.7020)：rosservice
 
@@ -146,14 +146,14 @@ angular:
 
 #### 查看服务列表：rosservice list
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/32719771b899013c1c6ac95849ddcdb5.png#pic_center)
+![在这里插入图片描述](assets/32719771b899013c1c6ac95849ddcdb5.png)
 
 #### 手动通过服务来进行操作
 
 这次我们通过人工产生服务（service）来诞生一只新海龟，使用rosservice call /spawn …
  在服务列表中，有个/spawn服务，可以产生一只新的海龟。
  格式：`rosservice call (参数) 服务名 “具体数据”`
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/db80ee57a72b73228a2a1050d5cb6ed9.png#pic_center)
+ ![在这里插入图片描述](assets/db80ee57a72b73228a2a1050d5cb6ed9.png)
  这时我们再输入`rostopic list`，可以看到turtle2已经在topic里了。
 
 ### 7.话题记录和复现：rosbag
@@ -163,13 +163,13 @@ angular:
  比如我们使用之前打开的键盘操作器让海龟移动一圈并记录下来：
  （1）打开新终端输入`rosbag record -a -O cmd_record`
  这样就开始记录了：
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/8c34c3e8ba55b97fef872094a0e9967e.png#pic_center)（2）移动一下：
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/d4a97523dd1e02ba3d9f3de572cc0ddd.png#pic_center)到记录界面按Ctrl+C停止：
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/ab9d48b8d0bb0f1958b197bcc8102c3f.png#pic_center)文件就记录在了这里：![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/02513d9713deb389df68bf2e412308d9.png#pic_center)
+ ![在这里插入图片描述](assets/8c34c3e8ba55b97fef872094a0e9967e.png)（2）移动一下：
+ ![在这里插入图片描述](assets/d4a97523dd1e02ba3d9f3de572cc0ddd.png)到记录界面按Ctrl+C停止：
+ ![在这里插入图片描述](assets/ab9d48b8d0bb0f1958b197bcc8102c3f.png)文件就记录在了这里：![在这里插入图片描述](assets/02513d9713deb389df68bf2e412308d9.png)
  （3）接下去关闭所有打开的ros节点
  重新开启roscore，开启海龟节点rosrun turtlesim turtlesim_node
  这时我们输入 `rosbag play cmd_record`就可以复现之前的移动啦！
- ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/f2b14c6c527a5afe88585f93ceed7931.png#pic_center)
+ ![在这里插入图片描述](assets/f2b14c6c527a5afe88585f93ceed7931.png)
 
 ## 五、创建ros工作空间与功能包
 
@@ -197,7 +197,7 @@ catkin_init_workspace	//创建
 注：“~/”意为当前用户名目录；“-p”意为递归创建目录，即直接创建多级目录。
 src文件夹即代码空间，**不能自行用别的名称代替**
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/295b716b8c61ab30db59a08f20365092.png#pic_center)可以看到创建了这么一个txt文件，说明创建工作空间成功。
+![img](assets/295b716b8c61ab30db59a08f20365092.png)可以看到创建了这么一个txt文件，说明创建工作空间成功。
 #### 编译空代码的工作空间
 
 要编译工作空间，先要回到工作空间的根目录。
@@ -209,12 +209,12 @@ catkin_make
 
 使用catkin_make为编译指令，将src里的源码进行编译
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/200bc54200a700eaebfd9d1884fc8b08.png#pic_center)
+![img](assets/200bc54200a700eaebfd9d1884fc8b08.png)
 
 可以看到生成了build和devel两个新文件夹，devel存放了编译完成的内容。
  这里没有生成install文件夹，要生成install文件夹，输入`catkin_make install`：
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/a0d7c51839653be7056a87d3248cea71.png#pic_center)
+![在这里插入图片描述](assets/a0d7c51839653be7056a87d3248cea71.png)
 
 install中生成了可执行文件。
 
@@ -378,7 +378,7 @@ int main(int argc, char **argv) {
 
     使用rosmsg show命令查看
 
-    ![image-20250920110325714](/home/chonqin/.config/Typora/typora-user-images/image-20250920110325714.png)
+    ![image-20250920110325714](assets/image-20250920110325714.png)
 
     以上的**Message**消息都是预定义好的，当我们需要自定义消息该怎么做呢？
 
@@ -394,7 +394,7 @@ int main(int argc, char **argv) {
     touch Person.msg//P要大写
     ```
 
-    ![image-20250920105335067](/home/chonqin/.config/Typora/typora-user-images/image-20250920105335067.png)
+    ![image-20250920105335067](assets/image-20250920105335067.png)
 
 - 在package.xml添加功能包依赖
 
@@ -433,7 +433,7 @@ int main(int argc, char **argv) {
 
 ## 九、Servce模式的编程与使用
 
-![image-20250920173350676](/home/chonqin/.config/Typora/typora-user-images/image-20250920173350676.png)
+![image-20250920173350676](assets/image-20250920173350676.png)
 
 Sever端是海龟仿真器节点，Client端是等待实现的节点，产生Request的请求，发送给Sever端。Sever端接受请求后产生一只海龟，并返回Response。中间传输的数据结构为定义好的turtlesim：：Spawn。
 
@@ -488,7 +488,7 @@ Sever端是海龟仿真器节点，Client端是等待实现的节点，产生Req
 
 随后开启turtlrsim节点后，服务应答，就在对应位置添加了一个新的小海龟
 
-![image-20250920170115886](/home/chonqin/.config/Typora/typora-user-images/image-20250920170115886.png)
+![image-20250920170115886](assets/image-20250920170115886.png)
 
 ## 十、服务端Sever的编程实现
 
@@ -502,7 +502,7 @@ Server端接收这个Trigger信号后，可控制其是否要给海龟发送Twis
 
 
 
-![img](https://i-blog.csdnimg.cn/blog_migrate/b71bbe429ce84281c88ef0c910dd78f8.png#pic_center)
+![img](assets/b71bbe429ce84281c88ef0c910dd78f8.png)
 
 开启rosmaster，turtlesim之后
 
@@ -529,7 +529,7 @@ rosservice call /turtle_command "{}"
 
 在pkg功能包目录下创建srv文件夹，并使用touch命令生成.srv文件
 
-![image-20250922190659468](/home/chonqin/.config/Typora/typora-user-images/image-20250922190659468.png)
+![image-20250922190659468](assets/image-20250922190659468.png)
 
 在文件中写入数据结构的内容
 
@@ -622,11 +622,11 @@ catkin_create_pkg learning_parameter roscpp rospy std_srvs
 
 在ROS中，参数文件常以YAML文件的格式保存
 
-![image-20250922194609158](/home/chonqin/.config/Typora/typora-user-images/image-20250922194609158.png)
+![image-20250922194609158](assets/image-20250922194609158.png)
 
 打开海龟节点后使用list命令看一下：
 
-![image-20250922194738800](/home/chonqin/.config/Typora/typora-user-images/image-20250922194738800.png)
+![image-20250922194738800](assets/image-20250922194738800.png)
 
 可以使用get命令获取某个参数值
 
@@ -636,15 +636,15 @@ eg：
 rosparam get /turtlesim/background_b 
 ```
 
-![image-20250922194923502](/home/chonqin/.config/Typora/typora-user-images/image-20250922194923502.png)
+![image-20250922194923502](assets/image-20250922194923502.png)
 
 也可以更改这些参数，使用set命令，随后使用get查看到已经更改。
 
-![image-20250922195108210](/home/chonqin/.config/Typora/typora-user-images/image-20250922195108210.png)
+![image-20250922195108210](assets/image-20250922195108210.png)
 
 但是，实际海龟背景尚未改变，发送一个clear的空内容服务请求。
 
-![image-20250922195238238](/home/chonqin/.config/Typora/typora-user-images/image-20250922195238238.png)
+![image-20250922195238238](assets/image-20250922195238238.png)
 
 这样子命令行更改有点麻烦，可以导出参数文件，更改后再load回去。
 
@@ -653,11 +653,11 @@ rosparam dump param.yaml
 //导出参数，并保存为param.yaml文件
 ```
 
-![image-20250922195757467](/home/chonqin/.config/Typora/typora-user-images/image-20250922195757467.png)
+![image-20250922195757467](assets/image-20250922195757467.png)
 
 打开后，更改参数然后保存。
 
-![image-20250922195829768](/home/chonqin/.config/Typora/typora-user-images/image-20250922195829768.png)
+![image-20250922195829768](assets/image-20250922195829768.png)
 
 ```powershell
 rosparam load param.yaml
@@ -665,7 +665,7 @@ rosparam load param.yaml
 
 随后，导入参数，再clear一下，可以看到颜色更改了。
 
-![image-20250922200000961](/home/chonqin/.config/Typora/typora-user-images/image-20250922200000961.png)
+![image-20250922200000961](assets/image-20250922200000961.png)
 
 其他的命令自己可以尝试。
 
@@ -721,7 +721,7 @@ int main(int argc, char **argv)
 
 运行后，更改了。
 
-![image-20250922205135270](/home/chonqin/.config/Typora/typora-user-images/image-20250922205135270.png)
+![image-20250922205135270](assets/image-20250922205135270.png)
 
 ## 十三、launch文件的使用
 
@@ -821,7 +821,7 @@ int main(int argc, char **argv) {
 
 经典操作了，以后不再赘述
 
-![image-20250923123719319](/home/chonqin/.config/Typora/typora-user-images/image-20250923123719319.png)
+![image-20250923123719319](assets/image-20250923123719319.png)
 
 编译运行后，就可以看到仿真里面的机器人按照你的程序进行运动了。
 
@@ -835,7 +835,7 @@ int main(int argc, char **argv) {
 
 而在ros中Rviz，我们得到的是一个激光雷达的点阵图。
 
-![image-20250924114550648](/home/chonqin/.config/Typora/typora-user-images/image-20250924114550648.png)
+![image-20250924114550648](assets/image-20250924114550648.png)
 
 ### Rviz
 
@@ -843,15 +843,15 @@ int main(int argc, char **argv) {
 
 #### 操作：
 
-- 启动仿真程序后，在终端中输入rviz。![image-20250924115406006](/home/chonqin/.config/Typora/typora-user-images/image-20250924115406006.png)
+- 启动仿真程序后，在终端中输入rviz。![image-20250924115406006](assets/image-20250924115406006.png)
 
 - 修改左边界面显示，左下角add RobotModel和LaserScan，如图（如果没有机器人模型的话就source一下再打开rviz）
 
-![image-20250924120357814](/home/chonqin/.config/Typora/typora-user-images/image-20250924120357814.png)****
+![image-20250924120357814](assets/image-20250924120357814.png)****
 
 - 这一排红色点阵就是雷达获取的数据，可以在仿真环境中添加障碍物来查看rviz的显示
 
-    ![image-20250924121504960](/home/chonqin/.config/Typora/typora-user-images/image-20250924121504960.png)
+    ![image-20250924121504960](assets/image-20250924121504960.png)
 
 - 可以导出此次的配置文件，然后下次打开rviz后再open配置文件。点击左上角的flies目录就可以看到
 
@@ -867,17 +867,17 @@ int main(int argc, char **argv) {
 
 
 
-![image-20250924121815175](/home/chonqin/.config/Typora/typora-user-images/image-20250924121815175.png)
+![image-20250924121815175](assets/image-20250924121815175.png)
 
 可以在终端中显示消息类型
 
 输入rostopic echo /scan --noarr
 
-![image-20250924121950186](/home/chonqin/.config/Typora/typora-user-images/image-20250924121950186.png)
+![image-20250924121950186](assets/image-20250924121950186.png)
 
 ### 用c++实现获取激光雷达
 
-![image-20250924195957070](/home/chonqin/.config/Typora/typora-user-images/image-20250924195957070.png)
+![image-20250924195957070](assets/image-20250924195957070.png)
 
 - 构建一个新的软件包，包名为lidar_pkg
 
@@ -917,13 +917,13 @@ int main(int argc, char **argv) {
 
 编译运行后，再打开仿真工具，移动前方的书架，可以看到距离的变化
 
-![image-20250924205150384](/home/chonqin/.config/Typora/typora-user-images/image-20250924205150384.png)
+![image-20250924205150384](assets/image-20250924205150384.png)
 
-![image-20250924205207354](/home/chonqin/.config/Typora/typora-user-images/image-20250924205207354.png)
+![image-20250924205207354](assets/image-20250924205207354.png)
 
 ## 十六、实现简单的避障控制
 
-![image-20250924205557332](/home/chonqin/.config/Typora/typora-user-images/image-20250924205557332.png)
+![image-20250924205557332](assets/image-20250924205557332.png)
 
 在上一节的基础上修改程序就可以了
 
@@ -976,7 +976,7 @@ int main(int argc, char **argv) {
 
 ### Imu Message
 
-![image-20250925105143048](/home/chonqin/.config/Typora/typora-user-images/image-20250925105143048.png)
+![image-20250925105143048](assets/image-20250925105143048.png)
 
 - angular_veloity ——————x,y,z三轴的旋转速度
 - liner——acceleration——————xyz三轴矢量加速度
@@ -986,7 +986,7 @@ int main(int argc, char **argv) {
 
 Ros官方给出了三个话题
 
-![image-20250925110052247](/home/chonqin/.config/Typora/typora-user-images/image-20250925110052247.png)
+![image-20250925110052247](assets/image-20250925110052247.png)
 
 - 六轴原始数据
 
@@ -1094,28 +1094,28 @@ int main(int argc, char **argv)
 
 假设地图上有两个障碍物，以俯视观察他。将地图用大小相同的方格代替，被占据的格子（哪怕只占据一点）涂上黑色，未被占据的栅格涂上白色。如图
 
-![image-20250925193257940](/home/chonqin/.config/Typora/typora-user-images/image-20250925193257940.png)
+![image-20250925193257940](assets/image-20250925193257940.png)
 
 **切换栅格的大小可以让障碍物的表示更加精准，理论上可以无限逼近实际的大小**。
 
-![image-20250925193415756](/home/chonqin/.config/Typora/typora-user-images/image-20250925193415756.png)
+![image-20250925193415756](assets/image-20250925193415756.png)
 
 - 一个小正方形的边长（栅格边长）即为**地图分辨率**。
 - 将黑色格子标记为1，空白格子为0，这样整个地图就可以以数组的形式存储数据来表示。
 
 ### Ros栅格地图消息的数据结构
 
-![image-20250925193836624](/home/chonqin/.config/Typora/typora-user-images/image-20250925193836624.png)
+![image-20250925193836624](assets/image-20250925193836624.png)
 
 info的包含如下：
 
-![image-20250925194150699](/home/chonqin/.config/Typora/typora-user-images/image-20250925194150699.png)
+![image-20250925194150699](assets/image-20250925194150699.png)
 
 
 
 ### C++编写节点
 
-![image-20250925194447759](/home/chonqin/.config/Typora/typora-user-images/image-20250925194447759.png)
+![image-20250925194447759](assets/image-20250925194447759.png)
 
 ```c++
 int main(int argc, char **argv) {
@@ -1157,7 +1157,7 @@ int main(int argc, char **argv) {
 
 添加起始点（Axes）和Map，topic选择写好的/map话题。可以看到地图按照我们定义的样子展现出来。
 
-![image-20250925201732674](/home/chonqin/.config/Typora/typora-user-images/image-20250925201732674.png)
+![image-20250925201732674](assets/image-20250925201732674.png)
 
 ```
 msg.info.origin.position.x = 2.0;
@@ -1166,7 +1166,7 @@ msg.info.origin.position.y = 1.0;
 
 如果更改了上面的数值，他们不再为0，就会出现这样子的情况：
 
-![image-20250925202124104](/home/chonqin/.config/Typora/typora-user-images/image-20250925202124104.png)
+![image-20250925202124104](assets/image-20250925202124104.png)
 
 ## 十九、SLAM
 
@@ -1186,35 +1186,35 @@ msg.info.origin.position.y = 1.0;
 
 假设此时机器人开启了雷达扫描功能，激光发射出去穿过的格子都标记为0，涂上白色，代表没有障碍物。直到激光撞到障碍物，反射回来，这个格子标记为100，涂上黑色。这样子就能得到当前观测点的周围障碍物情况，改变观测点后，又进行一次扫描，标记出周围的情况。将两次的标记情况进行特征重合，构建出局部的地图。不断重复这个过程，就可以得到一副完整的地图了。
 
-![image-20250926185458750](/home/chonqin/.config/Typora/typora-user-images/image-20250926185458750.png)
+![image-20250926185458750](assets/image-20250926185458750.png)
 
 ### Ros中通过c++实现Slam
 
-![image-20250926185810196](/home/chonqin/.config/Typora/typora-user-images/image-20250926185810196.png)
+![image-20250926185810196](assets/image-20250926185810196.png)
 
 激光雷达发送数据到slam节点进行处理（建图算法），在发布map话题让rviz可视化界面订阅，就可以显示地图出来了。
 
 Slam算法节点在ros中有提供，叫做Hector_Mapping节点。不用重复造轮子。
 
-![image-20250926200118226](/home/chonqin/.config/Typora/typora-user-images/image-20250926200118226.png)
+![image-20250926200118226](assets/image-20250926200118226.png)
 
 通过运行前三条指令可以开启slam的扫描功能，在rviz界面中add选项添加机器人model和map地图
 
-![image-20250926201134977](/home/chonqin/.config/Typora/typora-user-images/image-20250926201134977.png)
+![image-20250926201134977](assets/image-20250926201134977.png)
 
 第四行指令可以开启一个图像化界面来控制机器人运动
 
-![image-20250926201231220](/home/chonqin/.config/Typora/typora-user-images/image-20250926201231220.png)
+![image-20250926201231220](assets/image-20250926201231220.png)
 
 控制机器人移动，建模成功。
 
-![image-20250926201452881](/home/chonqin/.config/Typora/typora-user-images/image-20250926201452881.png)
+![image-20250926201452881](assets/image-20250926201452881.png)
 
 ### launch文件使用
 
 操作这么多有点麻烦，现在编写一个launch文件来一次性开启这些程序。
 
-![image-20250926204242519](/home/chonqin/.config/Typora/typora-user-images/image-20250926204242519.png)
+![image-20250926204242519](assets/image-20250926204242519.png)
 
 第一条语法是包含另一个launch文件的写法，￥（)用于查找括号下软件包的目录，后面接着具体文件路径。
 
@@ -1230,10 +1230,10 @@ rviz -d ~/Ros_WorkSpace/src/slam_pkg/rviz/slam.rviz
 
 可以在终端输入这段代码打开rviz后自动加载配置文件，也可以打开rviz后再手动选择加载。
 
-![image-20250926205145607](/home/chonqin/.config/Typora/typora-user-images/image-20250926205145607.png)
+![image-20250926205145607](assets/image-20250926205145607.png)
 
 可以在launch中添加参数args ，通过rviz来自动加载rviz的配置。
 
-![image-20250926205323599](/home/chonqin/.config/Typora/typora-user-images/image-20250926205323599.png)
+![image-20250926205323599](assets/image-20250926205323599.png)
 
 这样子就算自动配置好launch文件了。
